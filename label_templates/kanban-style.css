@@ -1,0 +1,42 @@
+@page {
+  width: 101mm;
+  height: 59mm;
+
+}
+.Title {
+  text-align: center;
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 22px;
+}
+.line {
+  line-height: 1mm;
+  font-weight: bold;
+}
+
+.right {
+  position: relative;
+  left: 50mm;
+  top: 5mm;
+  font-size: 12px;
+  font-weight: bold;
+}
+.info {
+  position: relative;
+  bottom: 1.5mm;
+  font-family: Verdana;
+  line-height:2;
+}
+
+.logo {
+  position: relative;
+  height: 8mm;
+  bottom: 4mm;
+}
+
+.qr {
+  position: absolute;
+  height: 20mm;
+  top: 29mm;
+  left: 80mm;
+}

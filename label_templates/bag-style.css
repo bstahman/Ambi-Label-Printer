@@ -1,0 +1,24 @@
+@page {
+  width: 101mm;
+  height: 59mm;
+
+}
+.Title {
+  text-align: left;
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 25px;
+}
+
+.info {
+  font-family: Verdana;
+  line-height:2;
+}
+
+.Description {
+  font-size: 13.5px;
+}
+
+.Order-Qty {
+  font-size: 19px;
+}

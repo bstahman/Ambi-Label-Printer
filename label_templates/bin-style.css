@@ -1,0 +1,38 @@
+@page {
+  width: 101mm;
+  height: 59mm;
+}
+
+.part-id {
+  text-align: left;
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 27px;
+  line-height: 2;
+}
+
+.description {
+  text-align: left;
+  font-size: 17px;
+  font-family: Verdana;
+}
+
+.location {
+  position: absolute;
+  top: 40mm;
+  font-weight: bold;
+  font-family: Verdana;
+}
+
+.qr {
+  position: absolute;
+  height: 25mm;
+  top: 29mm;
+  left: 75mm;
+}
+
+.logo {
+  position: absolute;
+  top: 47mm;
+  height: 7mm;
+}
