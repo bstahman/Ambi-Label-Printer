@@ -4,7 +4,10 @@ import locale
 import ghostscript
 import os
 
+DYMO_PRINTER_NAME = 'DYMO LabelWriter 4XL'
+
 def print_pdf(filename):
+
     f=os.path.join(os.getcwd(), filename).replace('\\', '\\\\')
 
     args = [
@@ -12,10 +15,11 @@ def print_pdf(filename):
         "-q",
         "-dNumCopies#1",
         "-dPDFFitPage",
+        "-dAutoRotatePages=/All",
         "-sDEVICE#mswinpr2",
         f"-dDEVICEWIDTHPOINTS=166.5",
         f"-dDEVICEHEIGHTPOINTS=288",
-        f'-sOutputFile#"%printer%{win32print.GetDefaultPrinter()}"',
+        f'-sOutputFile#"%printer%{DYMO_PRINTER_NAME}"',
         f'"{f}"'
     ]
 

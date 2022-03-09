@@ -36,15 +36,18 @@ def generate_labels(request):
     label_writer = LabelWriter(template, default_stylesheets=(style,))
 
     label_writer.write_labels(request["Rows"], target='unrotated_labels.pdf')
+
     rotate()
 
 
 def rotate():
+
     pdf_in = open('unrotated_labels.pdf', 'rb')
     pdf_reader = PyPDF2.PdfFileReader(pdf_in)
     pdf_writer = PyPDF2.PdfFileWriter()
 
     for pagenum in range(pdf_reader.numPages):
+
         page = pdf_reader.getPage(pagenum)
         page.rotateClockwise(90)
         pdf_writer.addPage(page)
