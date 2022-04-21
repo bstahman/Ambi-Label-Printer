@@ -20,16 +20,20 @@ async def handler(websocket):
 
             await websocket.send('SUCCESS')
 
+            await websocket.close()
+
         except Exception as e:
 
             await websocket.send('FAILURE')
 
             logging.error(str(e))
 
+            await websocket.close()
+
 
 async def main():
 
-    logging.basicConfig(filename='errors.log', format='%(asctime)s %(message)s', level=logging.ERROR)
+    logging.basicConfig(filename='logs.log', format='%(asctime)s %(message)s', level=logging.DEBUG)
 
     async with websockets.serve(handler, "localhost", 8765):
 
