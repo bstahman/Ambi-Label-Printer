@@ -4,9 +4,7 @@ import locale
 import ghostscript
 import os
 
-DYMO_PRINTER_NAME = 'DYMO LabelWriter 4XL'
-
-def print_pdf(filename):
+def print_pdf(file_name, printer_name):
 
     f=os.path.join(os.getcwd(), filename).replace('\\', '\\\\')
 
@@ -19,7 +17,7 @@ def print_pdf(filename):
         "-sDEVICE#mswinpr2",
         f"-dDEVICEWIDTHPOINTS=166.5",
         f"-dDEVICEHEIGHTPOINTS=288",
-        f'-sOutputFile#"%printer%{DYMO_PRINTER_NAME}"',
+        f'-sOutputFile#"%printer%{printer_name}"',
         f'"{f}"'
     ]
 

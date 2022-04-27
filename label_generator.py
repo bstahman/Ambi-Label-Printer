@@ -11,6 +11,7 @@ PART_STYLE=       'label_templates/part-style.css'
 BAG_TEMPLATE=     'label_templates/bag-template.html'
 BAG_STYLE=        'label_templates/bag-style.css'
 
+
 def generate_labels(request):
 
     style = ''
