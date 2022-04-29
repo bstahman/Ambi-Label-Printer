@@ -6,8 +6,8 @@ import websockets
 import json
 import logging
 
-DYMO_WHITE_LABEL_PRINTER_NAME = 'DYMO LabelWriter 4XL WHITE'
-DYMO_GREEN_LABEL_PRINTER_NAME = 'DYMO LabelWriter 4XL GREEN'
+DYMO_WHITE_LABEL_PRINTER_NAME = 'DYMO LabelWriter 4XL'
+DYMO_GREEN_LABEL_PRINTER_NAME = 'DYMO LabelWriter 4XL'
 
 async def handler(websocket):
 

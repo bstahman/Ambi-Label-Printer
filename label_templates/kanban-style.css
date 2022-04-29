@@ -8,6 +8,8 @@
   font-weight: bold;
   font-family: Verdana;
   font-size: 22px;
+  line-height:0.8;
+
 }
 .line {
   line-height: 1mm;
@@ -25,7 +27,8 @@
   position: relative;
   bottom: 1.5mm;
   font-family: Verdana;
-  line-height:2;
+  line-height:1.7;
+  font-size: 15.5px;
 }
 
 .logo {
@@ -39,4 +42,8 @@
   height: 20mm;
   top: 29mm;
   left: 80mm;
+}
+.Requester {
+
+  font-size: 12px;
 }

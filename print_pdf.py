@@ -6,7 +6,7 @@ import os
 
 def print_pdf(file_name, printer_name):
 
-    f=os.path.join(os.getcwd(), filename).replace('\\', '\\\\')
+    f=os.path.join(os.getcwd(), file_name).replace('\\', '\\\\')
 
     args = [
         "-dPrinted", "-dBATCH", "-dNOSAFER", "-dNOPAUSE", "-dNOPROMPT"
