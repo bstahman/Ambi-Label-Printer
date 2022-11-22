@@ -2,14 +2,16 @@ from blabel import LabelWriter
 import os
 import PyPDF2
 
-BIN_TEMPLATE=     'label_templates/bin-template.html'
-BIN_STYLE=        'label_templates/bin-style.css'
-KANBAN_TEMPLATE=  'label_templates/kanban-template.html'
-KANBAN_STYLE=     'label_templates/kanban-style.css'
-PART_TEMPLATE=    'label_templates/part-template.html'
-PART_STYLE=       'label_templates/part-style.css'
-BAG_TEMPLATE=     'label_templates/bag-template.html'
-BAG_STYLE=        'label_templates/bag-style.css'
+BIN_TEMPLATE=           'label_templates/bin-template.html'
+BIN_STYLE=              'label_templates/bin-style.css'
+KANBAN_TEMPLATE=        'label_templates/kanban-template.html'
+KANBAN_STYLE=           'label_templates/kanban-style.css'
+PART_TEMPLATE=          'label_templates/part-template.html'
+PART_STYLE=             'label_templates/part-style.css'
+BAG_TEMPLATE=           'label_templates/bag-template.html'
+BAG_STYLE=              'label_templates/bag-style.css'
+SITE_KANBAN_TEMPLATE=   'label_templates/site-kanban.html'
+SITE_KANBAN_STYLE=      'label_templates/site-kanban.css'
 
 
 def generate_labels(request):
@@ -34,11 +36,16 @@ def generate_labels(request):
             style = KANBAN_STYLE
             template = KANBAN_TEMPLATE
 
+        case "SiteKanban":
+            style = SITE_KANBAN_STYLE
+            template = SITE_KANBAN_TEMPLATE
+
     label_writer = LabelWriter(template, default_stylesheets=(style,))
 
     label_writer.write_labels(request["Rows"], target='unrotated_labels.pdf')
 
-    rotate()
+    if request["Label Type"] != "SiteKanban":
+        rotate()
 
 
 def rotate():
@@ -57,3 +64,11 @@ def rotate():
     pdf_writer.write(pdf_out)
     pdf_out.close()
     pdf_in.close()
+
+def test():
+
+    label_writer = LabelWriter(SITE_KANBAN_TEMPLATE, default_stylesheets=(SITE_KANBAN_STYLE,))
+
+    label_writer.write_labels([dict(url="gdofjknkfjb")], target='unrotated_labels.pdf')
+
+test()

@@ -1,0 +1,27 @@
+@page {
+  width: 59mm;
+  height: 101mm;
+
+}
+.small_qr {
+  height: 15mm;
+}
+
+.stop {
+  font-size: 32px;
+  line-height:1.5;
+
+}
+.qr {
+  height: 30mm;
+
+}
+.item {
+  padding-right:  .5%;
+  padding-left:  .5%;
+  font-size: 15px;
+  text-align: center;
+  width: 99%;
+  font-family: Verdana;
+
+}

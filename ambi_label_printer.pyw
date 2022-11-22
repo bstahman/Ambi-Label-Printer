@@ -19,8 +19,6 @@ async def handler(websocket):
 
             generate_labels(request)
 
-            print(request)
-
             if request["Label Type"] == 'Kanban':
 
                 print_pdf('labels.pdf', DYMO_GREEN_LABEL_PRINTER_NAME)
@@ -35,8 +33,6 @@ async def handler(websocket):
 
         except Exception as e:
 
-            print(e)
-
             await websocket.send('FAILURE')
 
             logging.error(str(e))
@@ -45,8 +41,6 @@ async def handler(websocket):
 
 
 async def main():
-
-    logging.basicConfig(filename='logs.log', format='%(asctime)s %(message)s', level=logging.DEBUG)
 
     async with websockets.serve(handler, "localhost", 8765):
 
