@@ -46,6 +46,9 @@ def generate_labels(request):
 
     if request["Label Type"] != "SiteKanban":
         rotate()
+        return 'labels.pdf'
+    else:
+        return 'unrotated_labels.pdf'
 
 
 def rotate():

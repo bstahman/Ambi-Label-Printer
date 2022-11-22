@@ -17,7 +17,7 @@ async def handler(websocket):
 
             request = json.loads(message)
 
-            generate_labels(request)
+            label_file = generate_labels(request)
 
             if request["Label Type"] == 'Kanban':
 
