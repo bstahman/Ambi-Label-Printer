@@ -6,8 +6,8 @@ import websockets
 import json
 import logging
 
-DYMO_WHITE_LABEL_PRINTER_NAME = 'DYMO LabelWriter 4XL WHITE'
-DYMO_GREEN_LABEL_PRINTER_NAME = 'DYMO LabelWriter 4XL GREEN'
+DYMO_WHITE_LABEL_PRINTER_NAME = 'KANBAN DYMO'
+DYMO_GREEN_LABEL_PRINTER_NAME = 'KANBAN DYMO'
 
 async def handler(websocket):
 
@@ -21,11 +21,11 @@ async def handler(websocket):
 
             if request["Label Type"] == 'Kanban':
 
-                print_pdf('labels.pdf', DYMO_GREEN_LABEL_PRINTER_NAME)
+                print_pdf(label_file, DYMO_GREEN_LABEL_PRINTER_NAME)
 
             else:
 
-                print_pdf('labels.pdf', DYMO_WHITE_LABEL_PRINTER_NAME)
+                print_pdf(label_file, DYMO_WHITE_LABEL_PRINTER_NAME)
 
             await websocket.send('SUCCESS')
 

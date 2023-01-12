@@ -67,11 +67,3 @@ def rotate():
     pdf_writer.write(pdf_out)
     pdf_out.close()
     pdf_in.close()
-
-def test():
-
-    label_writer = LabelWriter(SITE_KANBAN_TEMPLATE, default_stylesheets=(SITE_KANBAN_STYLE,))
-
-    label_writer.write_labels([dict(url="gdofjknkfjb")], target='unrotated_labels.pdf')
-
-test()
